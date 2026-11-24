@@ -1,0 +1,6 @@
+{
+  "name": "ChronoCube 3D — Interactive Rubik's Cube & LBL Solver",
+  "description": "Standalone Three.js interactive 3D Rubik's Cube with direct raycast slice dragging, speedcubing timer, and a state-based 7-step Layer-by-Layer solver.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
