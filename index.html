@@ -748,6 +748,370 @@
           padding: 8px 12px 9px;
         }
       }
+
+      .learn-header-actions {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        flex-shrink: 0;
+      }
+
+      .learn-action-btn {
+        background: rgba(59, 130, 246, 0.16);
+        border-color: rgba(96, 165, 250, 0.42);
+        color: #bfdbfe;
+      }
+
+      .learn-action-btn:hover {
+        background: rgba(59, 130, 246, 0.28);
+        color: #ffffff;
+      }
+
+      /* Custom Initial State & Photo Scan Modal */
+      .custom-modal-backdrop {
+        position: fixed;
+        inset: 0;
+        z-index: 40;
+        background: rgba(6, 9, 15, 0.82);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+      }
+
+      .custom-modal-backdrop.hidden {
+        display: none;
+      }
+
+      .custom-modal {
+        width: min(760px, 100%);
+        max-height: calc(100vh - 32px);
+        background: #101521;
+        border: 1px solid var(--border-strong);
+        border-radius: 18px;
+        box-shadow: 0 24px 64px rgba(0, 0, 0, 0.72);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      .custom-modal-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 14px 18px;
+        border-bottom: 1px solid var(--border-hairline);
+      }
+
+      .custom-modal-title {
+        font-family: var(--font-display);
+        font-size: 16px;
+        font-weight: 700;
+        margin: 0;
+        color: var(--text-primary);
+      }
+
+      .custom-modal-body {
+        padding: 14px 18px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .custom-intro {
+        font-size: 12.5px;
+        line-height: 1.48;
+        color: var(--text-secondary);
+        margin: 0;
+      }
+
+      .photo-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .photo-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--border-hairline);
+        border-radius: 12px;
+        padding: 10px 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .photo-card-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 6px 8px;
+      }
+
+      .photo-card-title {
+        font-size: 12.5px;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin: 0;
+      }
+
+      .photo-faces-select {
+        background: rgba(15, 20, 29, 0.95);
+        color: var(--text-primary);
+        border: 1px solid var(--border-hairline);
+        border-radius: 7px;
+        padding: 3px 6px;
+        font-size: 11.5px;
+        font-family: var(--font-mono);
+        max-width: 100%;
+      }
+
+      .photo-drop-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .photo-preview-box {
+        width: 72px;
+        height: 72px;
+        border-radius: 10px;
+        border: 1px dashed rgba(255, 255, 255, 0.22);
+        background: rgba(0, 0, 0, 0.28);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+
+      .photo-preview-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .photo-controls {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        flex: 1;
+        min-width: 0;
+      }
+
+      .photo-hint {
+        font-size: 11px;
+        line-height: 1.38;
+        color: var(--text-secondary);
+        margin: 0;
+      }
+
+      .photo-btn-row {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        flex-wrap: wrap;
+      }
+
+      .btn-compact {
+        padding: 5px 10px;
+        font-size: 11.5px;
+        border-radius: 8px;
+      }
+
+      .scan-action-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .net-section {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding-top: 10px;
+        border-top: 1px solid var(--border-hairline);
+      }
+
+      .palette-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .palette-row {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        flex-wrap: wrap;
+      }
+
+      .swatch-btn {
+        appearance: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 5px 9px;
+        border-radius: 8px;
+        border: 1px solid var(--border-hairline);
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--text-primary);
+        font-size: 11.5px;
+        font-family: var(--font-mono);
+        font-variant-numeric: tabular-nums;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+
+      .swatch-btn.active {
+        border-color: #60a5fa;
+        background: rgba(59, 130, 246, 0.22);
+      }
+
+      .swatch-btn.count-err {
+        border-color: rgba(248, 113, 113, 0.55);
+      }
+
+      .swatch-dot {
+        width: 13px;
+        height: 13px;
+        border-radius: 4px;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        flex-shrink: 0;
+      }
+
+      .cube-net {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        gap: 10px;
+        justify-content: center;
+        padding: 6px 0;
+      }
+
+      .net-face {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .net-face[data-face="U"] { grid-column: 2; grid-row: 1; }
+      .net-face[data-face="L"] { grid-column: 1; grid-row: 2; }
+      .net-face[data-face="F"] { grid-column: 2; grid-row: 2; }
+      .net-face[data-face="R"] { grid-column: 3; grid-row: 2; }
+      .net-face[data-face="B"] { grid-column: 4; grid-row: 2; }
+      .net-face[data-face="D"] { grid-column: 2; grid-row: 3; }
+
+      .net-face-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 4px;
+        font-family: var(--font-mono);
+        font-size: 11px;
+        color: var(--text-secondary);
+      }
+
+      .net-rot-btn {
+        appearance: none;
+        border: 1px solid var(--border-hairline);
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--text-secondary);
+        border-radius: 5px;
+        padding: 1px 5px;
+        font-size: 11px;
+        cursor: pointer;
+      }
+
+      .net-rot-btn:hover {
+        color: var(--text-primary);
+        background: rgba(255, 255, 255, 0.14);
+      }
+
+      .net-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 28px);
+        gap: 3px;
+        padding: 4px;
+        border-radius: 8px;
+        background: rgba(0, 0, 0, 0.35);
+        border: 1px solid var(--border-hairline);
+      }
+
+      .net-cell {
+        width: 28px;
+        height: 28px;
+        border-radius: 5px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        cursor: pointer;
+        padding: 0;
+        transition: transform 80ms ease;
+      }
+
+      .net-cell:hover {
+        transform: scale(1.06);
+      }
+
+      .net-cell.center-cell {
+        outline: 1px solid rgba(255, 255, 255, 0.45);
+        outline-offset: -3px;
+      }
+
+      .custom-status {
+        font-size: 12px;
+        line-height: 1.45;
+        padding: 8px 11px;
+        border-radius: 10px;
+        border: 1px solid var(--border-hairline);
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--text-secondary);
+        margin: 0;
+      }
+
+      .custom-status.ok {
+        border-color: rgba(52, 211, 153, 0.45);
+        background: rgba(16, 185, 129, 0.10);
+        color: #a7f3d0;
+      }
+
+      .custom-status.err {
+        border-color: rgba(248, 113, 113, 0.5);
+        background: rgba(239, 68, 68, 0.12);
+        color: #fecaca;
+      }
+
+      .custom-modal-footer {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        padding: 12px 18px;
+        border-top: 1px solid var(--border-hairline);
+      }
+
+      @media (max-width: 720px) {
+        .photo-grid {
+          grid-template-columns: 1fr;
+        }
+        .net-grid {
+          grid-template-columns: repeat(3, 23px);
+          gap: 2px;
+        }
+        .net-cell {
+          width: 23px;
+          height: 23px;
+        }
+        .cube-net {
+          gap: 6px;
+        }
+      }
     </style>
   </head>
   <body data-state="Solved">
@@ -787,7 +1151,10 @@
     <aside id="learnPanel" class="learn-panel hidden" aria-label="Vodič za učenje slaganja kocke">
       <div class="learn-header">
         <h2 class="learn-title">Vodič: Sloj po sloj</h2>
-        <button id="learnCloseBtn" class="learn-close" type="button" aria-label="Zatvori vodič za učenje">Zatvori</button>
+        <div class="learn-header-actions">
+          <button id="learnCustomBtn" class="learn-close learn-action-btn" type="button" aria-label="Unesi početno stanje kocke">Unesi stanje</button>
+          <button id="learnCloseBtn" class="learn-close" type="button" aria-label="Zatvori vodič za učenje">Zatvori</button>
+        </div>
       </div>
       <div id="learnBody" class="learn-body"></div>
       <div class="learn-footer">
@@ -795,6 +1162,105 @@
         <button id="learnPlayPhaseBtn" class="btn btn-solve" type="button">Odigraj fazu</button>
       </div>
     </aside>
+
+    <div id="customStateModal" class="custom-modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="customModalTitle">
+      <div class="custom-modal">
+        <div class="custom-modal-header">
+          <h2 id="customModalTitle" class="custom-modal-title">Početno stanje kocke (slike ili ručni unos)</h2>
+          <button id="customCloseBtn" class="learn-close" type="button" aria-label="Zatvori unos stanja">Zatvori</button>
+        </div>
+        <div class="custom-modal-body">
+          <p class="custom-intro">Možete otpremiti 1 ili 2 fotografije svoje kocke (svaka fotografija hvata 3 vidljive strane pod uglom, kao u 3D prikazu) ili direktno obojiti polja na mreži ispod.</p>
+
+          <div class="photo-grid">
+            <div class="photo-card">
+              <div class="photo-card-top">
+                <h3 class="photo-card-title">Slika 1 (3 strane)</h3>
+                <select id="photoFaces1" class="photo-faces-select" aria-label="Strane na slici 1">
+                  <option value="U,F,R">U · F · R (Gore, Napred, Desno)</option>
+                  <option value="D,B,L">D · B · L (Dole, Nazad, Levo)</option>
+                  <option value="U,R,B">U · R · B (Gore, Desno, Nazad)</option>
+                  <option value="U,L,F">U · L · F (Gore, Levo, Napred)</option>
+                </select>
+              </div>
+              <div class="photo-drop-row">
+                <div id="photoPreview1" class="photo-preview-box" aria-label="Pregled slike 1">
+                  <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+                    <polygon points="22,5 38,13 22,21 6,13" fill="rgba(255,255,255,0.22)" stroke="rgba(255,255,255,0.55)" stroke-width="1.2"/>
+                    <polygon points="6,13 22,21 22,38 6,30" fill="rgba(0,158,73,0.32)" stroke="rgba(255,255,255,0.45)" stroke-width="1.2"/>
+                    <polygon points="38,13 22,21 22,38 38,30" fill="rgba(200,29,29,0.32)" stroke="rgba(255,255,255,0.45)" stroke-width="1.2"/>
+                    <text x="22" y="15" text-anchor="middle" fill="#fff" font-size="7" font-family="monospace">U</text>
+                    <text x="14" y="28" text-anchor="middle" fill="#fff" font-size="7" font-family="monospace">F</text>
+                    <text x="30" y="28" text-anchor="middle" fill="#fff" font-size="7" font-family="monospace">R</text>
+                  </svg>
+                </div>
+                <div class="photo-controls">
+                  <p class="photo-hint">Fotografiši ugao gde se vide gornja, prednja i desna strana (isti ugao kao 3D kocka).</p>
+                  <div class="photo-btn-row">
+                    <input id="photoInput1" type="file" accept="image/*" hidden />
+                    <button id="photoPickBtn1" class="btn btn-compact" type="button">Izaberi sliku 1</button>
+                    <button id="photoClearBtn1" class="btn btn-compact" type="button" hidden>Ukloni</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="photo-card">
+              <div class="photo-card-top">
+                <h3 class="photo-card-title">Slika 2 (preostale 3)</h3>
+                <select id="photoFaces2" class="photo-faces-select" aria-label="Strane na slici 2">
+                  <option value="D,B,L">D · B · L (Dole, Nazad, Levo)</option>
+                  <option value="U,F,R">U · F · R (Gore, Napred, Desno)</option>
+                  <option value="D,R,B">D · R · B (Dole, Desno, Nazad)</option>
+                  <option value="D,L,F">D · L · F (Dole, Levo, Napred)</option>
+                </select>
+              </div>
+              <div class="photo-drop-row">
+                <div id="photoPreview2" class="photo-preview-box" aria-label="Pregled slike 2">
+                  <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+                    <polygon points="22,5 38,13 22,21 6,13" fill="rgba(250,204,21,0.28)" stroke="rgba(255,255,255,0.55)" stroke-width="1.2"/>
+                    <polygon points="6,13 22,21 22,38 6,30" fill="rgba(18,72,196,0.34)" stroke="rgba(255,255,255,0.45)" stroke-width="1.2"/>
+                    <polygon points="38,13 22,21 22,38 38,30" fill="rgba(240,90,0,0.34)" stroke="rgba(255,255,255,0.45)" stroke-width="1.2"/>
+                    <text x="22" y="15" text-anchor="middle" fill="#fff" font-size="7" font-family="monospace">D</text>
+                    <text x="14" y="28" text-anchor="middle" fill="#fff" font-size="7" font-family="monospace">B</text>
+                    <text x="30" y="28" text-anchor="middle" fill="#fff" font-size="7" font-family="monospace">L</text>
+                  </svg>
+                </div>
+                <div class="photo-controls">
+                  <p class="photo-hint">Okreni kocku na suprotni ugao tako da se vide donja, zadnja i leva strana.</p>
+                  <div class="photo-btn-row">
+                    <input id="photoInput2" type="file" accept="image/*" hidden />
+                    <button id="photoPickBtn2" class="btn btn-compact" type="button">Izaberi sliku 2</button>
+                    <button id="photoClearBtn2" class="btn btn-compact" type="button" hidden>Ukloni</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="scan-action-row">
+            <button id="recognizeImagesBtn" class="btn btn-primary btn-compact" type="button" disabled>Očitaj boje sa slika</button>
+            <div class="photo-btn-row">
+              <button id="netLoadCurrentBtn" class="btn btn-compact" type="button">Preuzmi sa 3D kocke</button>
+              <button id="netResetSolvedBtn" class="btn btn-compact" type="button">Rešena kocka</button>
+            </div>
+          </div>
+
+          <div class="net-section">
+            <div class="palette-bar">
+              <div id="paletteRow" class="palette-row" role="radiogroup" aria-label="Izaberi boju nalepnice"></div>
+            </div>
+            <div id="cubeNet" class="cube-net" aria-label="2D mreža svih 6 strana kocke"></div>
+          </div>
+
+          <p id="customValidationMsg" class="custom-status">Klikni polje na mreži za korekciju boje ili otpremi fotografije kocke.</p>
+        </div>
+        <div class="custom-modal-footer">
+          <button id="customCancelBtn" class="btn" type="button">Otkaži</button>
+          <button id="applyCustomStateBtn" class="btn btn-solve" type="button">Primeni i pokreni Learn Mode</button>
+        </div>
+      </div>
+    </div>
 
     <div id="dockWrapper" class="dock-wrapper">
       <button id="dockToggle" class="dock-toggle" type="button" aria-expanded="true" aria-controls="controlDock">
@@ -1652,6 +2118,231 @@
 
         return phases;
       }
+
+      // -----------------------------------------------------------------------
+      // Custom 2D Facelet Mapping, Parity & Solvability Validator
+      // -----------------------------------------------------------------------
+      const FACELET_ORDER = ['U', 'L', 'F', 'R', 'B', 'D'];
+      const FACELET_DIR_KEY = { U: 'py', L: 'nx', F: 'pz', R: 'px', B: 'nz', D: 'ny' };
+      const OPPOSITE_COLOR = { W: 'Y', Y: 'W', G: 'B', B: 'G', R: 'O', O: 'R' };
+      const HOME_COLOR_VEC = {
+        W: [0, 1, 0], Y: [0, -1, 0],
+        G: [0, 0, 1], B: [0, 0, -1],
+        R: [1, 0, 0], O: [-1, 0, 0]
+      };
+
+      function faceletRCtoXYZ(face, r, c) {
+        if (face === 'U') return [c - 1, 1, r - 1];
+        if (face === 'F') return [c - 1, 1 - r, 1];
+        if (face === 'R') return [1, 1 - r, 1 - c];
+        if (face === 'L') return [-1, 1 - r, c - 1];
+        if (face === 'B') return [1 - c, 1 - r, -1];
+        return [c - 1, -1, 1 - r];
+      }
+
+      function readFaceletsFromState(worldCubies) {
+        const out = { U: [], L: [], F: [], R: [], B: [], D: [] };
+        for (const face of FACELET_ORDER) {
+          const dirKey = FACELET_DIR_KEY[face];
+          for (let r = 0; r < 3; r++) {
+            for (let c = 0; c < 3; c++) {
+              const [x, y, z] = faceletRCtoXYZ(face, r, c);
+              const cubie = getCubieAt(worldCubies, x, y, z);
+              out[face].push(cubie ? cubie.stickers[dirKey] : 'W');
+            }
+          }
+        }
+        return out;
+      }
+
+      function rotateFaceletGridCW(arr) {
+        if (!Array.isArray(arr) || arr.length !== 9) return arr;
+        return [
+          arr[6], arr[3], arr[0],
+          arr[7], arr[4], arr[1],
+          arr[8], arr[5], arr[2]
+        ];
+      }
+
+      function buildStateFromFacelets(facelets) {
+        const cubies = [];
+        const map = new Map();
+        for (let x = -1; x <= 1; x++) {
+          for (let y = -1; y <= 1; y++) {
+            for (let z = -1; z <= 1; z++) {
+              const obj = {
+                x, y, z,
+                stickers: { px: null, nx: null, py: null, ny: null, pz: null, nz: null }
+              };
+              cubies.push(obj);
+              map.set(`${x},${y},${z}`, obj);
+            }
+          }
+        }
+        for (const face of FACELET_ORDER) {
+          const dirKey = FACELET_DIR_KEY[face];
+          const grid = facelets[face];
+          for (let r = 0; r < 3; r++) {
+            for (let c = 0; c < 3; c++) {
+              const [x, y, z] = faceletRCtoXYZ(face, r, c);
+              const target = map.get(`${x},${y},${z}`);
+              if (target) {
+                target.stickers[dirKey] = grid[r * 3 + c];
+              }
+            }
+          }
+        }
+        return cubies;
+      }
+
+      function validateCustomFacelets(facelets) {
+        const validColors = ['W', 'Y', 'G', 'B', 'R', 'O'];
+        const counts = { W: 0, Y: 0, G: 0, B: 0, R: 0, O: 0 };
+
+        for (const face of FACELET_ORDER) {
+          const grid = facelets?.[face];
+          if (!Array.isArray(grid) || grid.length !== 9) {
+            return { ok: false, error: `Strana ${face} mora imati tačno 9 polja.` };
+          }
+          for (const col of grid) {
+            if (!validColors.includes(col)) {
+              return { ok: false, error: `Nepoznata boja "${col}" na strani ${face}.` };
+            }
+            counts[col]++;
+          }
+        }
+
+        const badCounts = validColors
+          .filter((c) => counts[c] !== 9)
+          .map((c) => `${COLOR_NAME_SR[c]} (${counts[c]}/9)`);
+        if (badCounts.length > 0) {
+          return {
+            ok: false,
+            counts,
+            error: `Svaka boja mora biti zastupljena tačno 9 puta. Trenutno odstupa: ${badCounts.join(', ')}.`
+          };
+        }
+
+        // Check center colors & 3D orientation
+        const centers = FACELET_ORDER.map((f) => facelets[f][4]);
+        if (new Set(centers).size !== 6) {
+          return {
+            ok: false,
+            counts,
+            error: 'Svih 6 središnjih polja (centara strana) moraju biti različite boje.'
+          };
+        }
+
+        const uC = facelets.U[4], dC = facelets.D[4];
+        const fC = facelets.F[4], bC = facelets.B[4];
+        const rC = facelets.R[4], lC = facelets.L[4];
+        if (OPPOSITE_COLOR[uC] !== dC || OPPOSITE_COLOR[fC] !== bC || OPPOSITE_COLOR[rC] !== lC) {
+          return {
+            ok: false,
+            counts,
+            error: 'Naspramni centri se ne poklapaju (bela↔žuta, zelena↔plava, crvena↔narandžasta).'
+          };
+        }
+        if (dotVec(crossVec(HOME_COLOR_VEC[uC], HOME_COLOR_VEC[fC]), HOME_COLOR_VEC[rC]) !== 1) {
+          return {
+            ok: false,
+            counts,
+            error: 'Raspored centara U-F-R je kao u ogledalu. Proverite pozicije centara.'
+          };
+        }
+
+        const worldCubies = buildStateFromFacelets(facelets);
+        const solvedTemplate = createSolvedState();
+        const usedHomeIdx = new Set();
+
+        for (const tc of worldCubies) {
+          const tEntries = Object.entries(tc.stickers).filter(([, v]) => v !== null);
+          if (tEntries.length === 0) continue;
+          const tColors = tEntries.map(([, v]) => v);
+
+          const homeIdx = solvedTemplate.findIndex((sc) => {
+            const sVals = Object.values(sc.stickers).filter(Boolean);
+            return sVals.length === tColors.length && tColors.every((col) => sVals.includes(col));
+          });
+
+          if (homeIdx === -1) {
+            const names = tColors.map((c) => COLOR_NAME_SR[c]).join('-');
+            return {
+              ok: false,
+              counts,
+              error: `Nemoguća kombinacija boja (${names}) na jednoj kockici — proverite suprotne boje.`
+            };
+          }
+
+          if (usedHomeIdx.has(homeIdx)) {
+            const names = tColors.map((c) => COLOR_NAME_SR[c]).join('-');
+            return {
+              ok: false,
+              counts,
+              error: `Kockica sa bojama (${names}) se pojavljuje više puta.`
+            };
+          }
+          usedHomeIdx.add(homeIdx);
+
+          // Corner chirality check (3 stickers must preserve right-handed orientation)
+          if (tEntries.length === 3) {
+            const sc = solvedTemplate[homeIdx];
+            const sEntries = Object.entries(sc.stickers).filter(([, v]) => v !== null);
+            const findDir = (entries, col) => DIR_VEC[entries.find(([, v]) => v === col)[0]];
+            const [c1, c2, c3] = tColors;
+            const tDet = dotVec(crossVec(findDir(tEntries, c1), findDir(tEntries, c2)), findDir(tEntries, c3));
+            const sDet = dotVec(crossVec(findDir(sEntries, c1), findDir(sEntries, c2)), findDir(sEntries, c3));
+            if (tDet !== sDet) {
+              const names = tColors.map((c) => COLOR_NAME_SR[c]).join('-');
+              return {
+                ok: false,
+                counts,
+                error: `Nalepnice na uglu (${names}) imaju obrnut redosled (kao u ogledalu).`
+              };
+            }
+          }
+        }
+
+        // Verify parity & full solvability via 7-step LBL solver
+        const verify = cloneState(worldCubies);
+        if (!isStateSolved(verify)) {
+          const phases = solveCubeLBL(verify);
+          for (const ph of phases) {
+            for (const mv of ph.moves) {
+              applyMoveToState(verify, mv);
+            }
+          }
+          if (!isStateSolved(verify)) {
+            const { canonCubies } = detectCanonicalMapping(verify);
+            let yDownCount = 0;
+            for (const pos of SIDE_POS) {
+              if (getCubieAt(canonCubies, pos[0], -1, pos[1]).stickers.ny === 'Y') yDownCount++;
+            }
+            if (yDownCount % 2 !== 0) {
+              return {
+                ok: false,
+                counts,
+                error: 'Jedna ivica je fizički okrenuta naopako (nemoguć paritet ivica — proverite ivice).'
+              };
+            }
+            const badCornerTwist = CORNER_COORDS_D.some(([x, y, z]) => getCubieAt(canonCubies, x, y, z).stickers.ny !== 'Y');
+            if (badCornerTwist) {
+              return {
+                ok: false,
+                counts,
+                error: 'Jedan ugao je zarotiran u mestu (proverite redosled boja na jednom od uglova).'
+              };
+            }
+            return {
+              ok: false,
+              counts,
+              error: 'Dve ivice ili dva ugla su zamenjeni (nemoguća permutacija fizičke kocke).'
+            };
+          }
+        }
+
+        return { ok: true, counts, worldCubies };
+      }
       // === CUBE_SOLVER_END ===
 
       // Expose solver hooks on window for automated verification if needed
@@ -2164,8 +2855,31 @@
       const learnPanel = document.getElementById('learnPanel');
       const learnBody = document.getElementById('learnBody');
       const learnCloseBtn = document.getElementById('learnCloseBtn');
+      const learnCustomBtn = document.getElementById('learnCustomBtn');
       const learnNextMoveBtn = document.getElementById('learnNextMoveBtn');
       const learnPlayPhaseBtn = document.getElementById('learnPlayPhaseBtn');
+
+      // Custom State Modal DOM refs
+      const customStateModal = document.getElementById('customStateModal');
+      const customCloseBtn = document.getElementById('customCloseBtn');
+      const customCancelBtn = document.getElementById('customCancelBtn');
+      const applyCustomStateBtn = document.getElementById('applyCustomStateBtn');
+      const recognizeImagesBtn = document.getElementById('recognizeImagesBtn');
+      const netLoadCurrentBtn = document.getElementById('netLoadCurrentBtn');
+      const netResetSolvedBtn = document.getElementById('netResetSolvedBtn');
+      const paletteRow = document.getElementById('paletteRow');
+      const cubeNetEl = document.getElementById('cubeNet');
+      const customValidationMsg = document.getElementById('customValidationMsg');
+      const photoInput1 = document.getElementById('photoInput1');
+      const photoInput2 = document.getElementById('photoInput2');
+      const photoPickBtn1 = document.getElementById('photoPickBtn1');
+      const photoPickBtn2 = document.getElementById('photoPickBtn2');
+      const photoClearBtn1 = document.getElementById('photoClearBtn1');
+      const photoClearBtn2 = document.getElementById('photoClearBtn2');
+      const photoPreview1 = document.getElementById('photoPreview1');
+      const photoPreview2 = document.getElementById('photoPreview2');
+      const photoFaces1 = document.getElementById('photoFaces1');
+      const photoFaces2 = document.getElementById('photoFaces2');
 
       // 3D Target Cubie Highlight Cage for Learn Mode
       const highlightCage = new THREE.LineSegments(
@@ -2277,7 +2991,7 @@
           stepHtml = `
             <div class="step-box">
               <h3 class="step-heading">Kocka je složena!</h3>
-              <p class="step-desc">Svih 7 faza metode Sloj po sloj je uspešno završeno. Klikni Scramble ako želiš novu vežbu.</p>
+              <p class="step-desc">Svih 7 faza metode Sloj po sloj je uspešno završeno. Klikni Scramble za mešanje ili „Unesi stanje“ za unos svoje kocke.</p>
             </div>
           `;
         } else {
@@ -2387,6 +3101,7 @@
         solveBtn.disabled = busy || solvedNow;
         undoBtn.disabled = busy || manualHistory.length === 0;
         resetBtn.disabled = false;
+        learnCustomBtn.disabled = busy;
         learnNextMoveBtn.disabled = busy || solvedNow || learnPlan.length === 0;
         learnPlayPhaseBtn.disabled = busy || solvedNow || learnPlan.length === 0;
         for (const b of moveBtns) {
@@ -2939,6 +3654,366 @@
 
       resetBtn.addEventListener('click', resetCubeImmediate);
 
+      // -----------------------------------------------------------------------
+      // Custom Initial State Modal, 2-Photo Gemini Scan & 3D Reconstruction
+      // -----------------------------------------------------------------------
+      const PALETTE_ITEMS = [
+        { code: 'W', label: 'Bela', hex: '#ffffff' },
+        { code: 'Y', label: 'Žuta', hex: '#facc15' },
+        { code: 'G', label: 'Zelena', hex: '#009e49' },
+        { code: 'B', label: 'Plava', hex: '#1248c4' },
+        { code: 'R', label: 'Crvena', hex: '#c81d1d' },
+        { code: 'O', label: 'Narandžasta', hex: '#f05a00' }
+      ];
+      const COLOR_CSS = Object.fromEntries(PALETTE_ITEMS.map((i) => [i.code, i.hex]));
+      const FACE_TITLES_SR = {
+        U: 'U · Gore', L: 'L · Levo', F: 'F · Napred',
+        R: 'R · Desno', B: 'B · Nazad', D: 'D · Dole'
+      };
+      const defaultPreviewSvg1 = photoPreview1.innerHTML;
+      const defaultPreviewSvg2 = photoPreview2.innerHTML;
+
+      let customModalOpen = false;
+      let selectedPaintColor = 'W';
+      let draftFacelets = readFaceletsFromState(createSolvedState());
+      let uploadedPhoto1 = null;
+      let uploadedPhoto2 = null;
+      let lastCustomCheck = null;
+
+      function applyCustomWorldStateTo3D(targetCubies) {
+        moveQueue.length = 0;
+        activeAnimation = null;
+        dragState = null;
+        controls.enabled = true;
+        detachPivotAndSnap();
+
+        const mU = new THREE.Matrix4();
+        const mW = new THREE.Matrix4();
+        const mR = new THREE.Matrix4();
+        const uA = new THREE.Vector3();
+        const uB = new THREE.Vector3();
+        const uC = new THREE.Vector3();
+        const wA = new THREE.Vector3();
+        const wB = new THREE.Vector3();
+        const wC = new THREE.Vector3();
+
+        const used3D = new Set();
+        for (const tc of targetCubies) {
+          const tEntries = Object.entries(tc.stickers).filter(([, v]) => v !== null);
+          const tColors = tEntries.map(([, v]) => v);
+
+          const cubie = cubies.find((c, idx) => {
+            if (used3D.has(idx)) return false;
+            const vals = Object.values(c.userData.initStickers).filter(Boolean);
+            return vals.length === tColors.length && tColors.every((col) => vals.includes(col));
+          });
+          if (!cubie) throw new Error('Nedostaje 3D kockica za custom stanje.');
+          used3D.add(cubies.indexOf(cubie));
+
+          cubie.position.set(tc.x * SPACING, tc.y * SPACING, tc.z * SPACING);
+
+          if (tEntries.length === 0) {
+            cubie.quaternion.identity();
+          } else if (tEntries.length === 1) {
+            const col = tEntries[0][1];
+            const localKey = Object.entries(cubie.userData.initStickers).find(([, v]) => v === col)[0];
+            const worldKey = tEntries[0][0];
+            uA.copy(LOCAL_DIR_VECS[localKey]);
+            wA.copy(LOCAL_DIR_VECS[worldKey]);
+            if (uA.dot(wA) < -0.99) {
+              const ortho = Math.abs(uA.x) < 0.5 ? new THREE.Vector3(1, 0, 0) : new THREE.Vector3(0, 0, 1);
+              cubie.quaternion.setFromAxisAngle(ortho, Math.PI);
+            } else {
+              cubie.quaternion.setFromUnitVectors(uA, wA);
+            }
+          } else {
+            const colA = tEntries[0][1];
+            const colB = tEntries[1][1];
+            const lKeyA = Object.entries(cubie.userData.initStickers).find(([, v]) => v === colA)[0];
+            const lKeyB = Object.entries(cubie.userData.initStickers).find(([, v]) => v === colB)[0];
+            uA.copy(LOCAL_DIR_VECS[lKeyA]);
+            uB.copy(LOCAL_DIR_VECS[lKeyB]);
+            uC.crossVectors(uA, uB);
+
+            wA.copy(LOCAL_DIR_VECS[tEntries[0][0]]);
+            wB.copy(LOCAL_DIR_VECS[tEntries[1][0]]);
+            wC.crossVectors(wA, wB);
+
+            mU.makeBasis(uA, uB, uC).transpose();
+            mW.makeBasis(wA, wB, wC);
+            mR.multiplyMatrices(mW, mU);
+            cubie.quaternion.setFromRotationMatrix(mR);
+          }
+
+          snapCubieExact(cubie);
+        }
+
+        mode = 'idle';
+        learnPlayingPhase = false;
+        manualHistory = [];
+        moveCounter = 0;
+        timerRunning = false;
+        armedForSolve = false;
+        usedSolver = false;
+        elapsedMs = 0;
+        pulseTimeLeft = 0;
+        cubeRoot.scale.setScalar(1);
+        const solved = isStateSolved(readLogicalStateFrom3D());
+        statusLabel = solved ? 'Solved' : 'Ready';
+        phaseLabel = solved ? 'Ready to scramble' : 'Početno stanje učitano';
+        lastNotation = '—';
+        setLearnOpen(true);
+        syncUI();
+        requestRender();
+      }
+
+      function renderCustomPaletteAndStatus() {
+        const res = validateCustomFacelets(draftFacelets);
+        lastCustomCheck = res;
+        const counts = res.counts || (() => {
+          const c = { W: 0, Y: 0, G: 0, B: 0, R: 0, O: 0 };
+          for (const f of FACELET_ORDER) {
+            for (const col of draftFacelets[f]) {
+              if (c[col] !== undefined) c[col]++;
+            }
+          }
+          return c;
+        })();
+
+        paletteRow.innerHTML = PALETTE_ITEMS.map((item) => {
+          const cnt = counts[item.code] ?? 0;
+          const active = selectedPaintColor === item.code ? 'active' : '';
+          const err = cnt !== 9 ? 'count-err' : '';
+          return `
+            <button class="swatch-btn ${active} ${err}" type="button" data-color="${item.code}" role="radio" aria-checked="${selectedPaintColor === item.code}">
+              <span class="swatch-dot" style="background:${item.hex}"></span>
+              <span>${item.label} ${cnt}/9</span>
+            </button>
+          `;
+        }).join('');
+
+        for (const btn of paletteRow.querySelectorAll('.swatch-btn')) {
+          btn.addEventListener('click', () => {
+            selectedPaintColor = btn.dataset.color;
+            renderCustomPaletteAndStatus();
+          });
+        }
+
+        if (res.ok) {
+          customValidationMsg.className = 'custom-status ok';
+          customValidationMsg.textContent = isStateSolved(res.worldCubies)
+            ? 'Stanje je validno (kocka je već složena).'
+            : 'Stanje je validno i rešivo — spremno za Learn Mode!';
+          applyCustomStateBtn.disabled = false;
+        } else {
+          customValidationMsg.className = 'custom-status err';
+          customValidationMsg.textContent = res.error;
+          applyCustomStateBtn.disabled = true;
+        }
+      }
+
+      function renderCustomCubeNet() {
+        cubeNetEl.innerHTML = FACELET_ORDER.map((face) => {
+          const cells = draftFacelets[face].map((col, idx) => {
+            const centerCls = idx === 4 ? 'center-cell' : '';
+            return `<button class="net-cell ${centerCls}" type="button" data-face="${face}" data-idx="${idx}" style="background:${COLOR_CSS[col]}" aria-label="${face} polje ${idx + 1} (${COLOR_NAME_SR[col]})"></button>`;
+          }).join('');
+          return `
+            <div class="net-face" data-face="${face}">
+              <div class="net-face-header">
+                <span>${FACE_TITLES_SR[face]}</span>
+                <button class="net-rot-btn" type="button" data-rot="${face}" title="Rotiraj stranu ${face} za 90° u smeru kazaljke">↻</button>
+              </div>
+              <div class="net-grid">${cells}</div>
+            </div>
+          `;
+        }).join('');
+
+        for (const cell of cubeNetEl.querySelectorAll('.net-cell')) {
+          cell.addEventListener('click', () => {
+            const f = cell.dataset.face;
+            const i = Number(cell.dataset.idx);
+            draftFacelets[f][i] = selectedPaintColor;
+            cell.style.background = COLOR_CSS[selectedPaintColor];
+            cell.setAttribute('aria-label', `${f} polje ${i + 1} (${COLOR_NAME_SR[selectedPaintColor]})`);
+            renderCustomPaletteAndStatus();
+          });
+        }
+
+        for (const rotBtn of cubeNetEl.querySelectorAll('.net-rot-btn')) {
+          rotBtn.addEventListener('click', () => {
+            const f = rotBtn.dataset.rot;
+            draftFacelets[f] = rotateFaceletGridCW(draftFacelets[f]);
+            renderCustomCubeNet();
+            renderCustomPaletteAndStatus();
+          });
+        }
+      }
+
+      function syncPhotoButtons() {
+        recognizeImagesBtn.disabled = !uploadedPhoto1 && !uploadedPhoto2;
+        photoClearBtn1.hidden = !uploadedPhoto1;
+        photoClearBtn2.hidden = !uploadedPhoto2;
+      }
+
+      function resizeImageToDataUrl(file) {
+        return new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onerror = () => reject(new Error('Neuspelo čitanje fajla.'));
+          reader.onload = () => {
+            const img = new Image();
+            img.onerror = () => reject(new Error('Fajl nije validna slika.'));
+            img.onload = () => {
+              const maxDim = 1024;
+              let w = img.naturalWidth || img.width;
+              let h = img.naturalHeight || img.height;
+              if (w > maxDim || h > maxDim) {
+                const scale = maxDim / Math.max(w, h);
+                w = Math.round(w * scale);
+                h = Math.round(h * scale);
+              }
+              const canvas = document.createElement('canvas');
+              canvas.width = w;
+              canvas.height = h;
+              const ctx = canvas.getContext('2d');
+              ctx.drawImage(img, 0, 0, w, h);
+              resolve(canvas.toDataURL('image/jpeg', 0.88));
+            };
+            img.src = String(reader.result);
+          };
+          reader.readAsDataURL(file);
+        });
+      }
+
+      function setCustomModalOpen(open) {
+        customModalOpen = !!open;
+        customStateModal.classList.toggle('hidden', !customModalOpen);
+        if (customModalOpen) {
+          draftFacelets = readFaceletsFromState(readLogicalStateFrom3D());
+          renderCustomCubeNet();
+          renderCustomPaletteAndStatus();
+          syncPhotoButtons();
+        }
+      }
+
+      learnCustomBtn.addEventListener('click', () => {
+        if (mode !== 'idle' || activeAnimation || moveQueue.length > 0 || dragState) return;
+        setCustomModalOpen(true);
+      });
+      customCloseBtn.addEventListener('click', () => setCustomModalOpen(false));
+      customCancelBtn.addEventListener('click', () => setCustomModalOpen(false));
+
+      photoPickBtn1.addEventListener('click', () => photoInput1.click());
+      photoPickBtn2.addEventListener('click', () => photoInput2.click());
+
+      photoInput1.addEventListener('change', async (e) => {
+        const file = e.target.files?.[0];
+        if (!file) return;
+        try {
+          uploadedPhoto1 = await resizeImageToDataUrl(file);
+          photoPreview1.innerHTML = `<img src="${uploadedPhoto1}" alt="Slika 1 kocke" />`;
+          syncPhotoButtons();
+        } catch (err) {
+          customValidationMsg.className = 'custom-status err';
+          customValidationMsg.textContent = err.message;
+        }
+      });
+
+      photoInput2.addEventListener('change', async (e) => {
+        const file = e.target.files?.[0];
+        if (!file) return;
+        try {
+          uploadedPhoto2 = await resizeImageToDataUrl(file);
+          photoPreview2.innerHTML = `<img src="${uploadedPhoto2}" alt="Slika 2 kocke" />`;
+          syncPhotoButtons();
+        } catch (err) {
+          customValidationMsg.className = 'custom-status err';
+          customValidationMsg.textContent = err.message;
+        }
+      });
+
+      photoClearBtn1.addEventListener('click', () => {
+        uploadedPhoto1 = null;
+        photoInput1.value = '';
+        photoPreview1.innerHTML = defaultPreviewSvg1;
+        syncPhotoButtons();
+      });
+
+      photoClearBtn2.addEventListener('click', () => {
+        uploadedPhoto2 = null;
+        photoInput2.value = '';
+        photoPreview2.innerHTML = defaultPreviewSvg2;
+        syncPhotoButtons();
+      });
+
+      netLoadCurrentBtn.addEventListener('click', () => {
+        draftFacelets = readFaceletsFromState(readLogicalStateFrom3D());
+        renderCustomCubeNet();
+        renderCustomPaletteAndStatus();
+      });
+
+      netResetSolvedBtn.addEventListener('click', () => {
+        draftFacelets = readFaceletsFromState(createSolvedState());
+        renderCustomCubeNet();
+        renderCustomPaletteAndStatus();
+      });
+
+      recognizeImagesBtn.addEventListener('click', async () => {
+        const images = [];
+        if (uploadedPhoto1) {
+          images.push({ slot: 'Slika 1', dataUrl: uploadedPhoto1, faces: photoFaces1.value.split(',') });
+        }
+        if (uploadedPhoto2) {
+          images.push({ slot: 'Slika 2', dataUrl: uploadedPhoto2, faces: photoFaces2.value.split(',') });
+        }
+        if (images.length === 0) return;
+
+        recognizeImagesBtn.disabled = true;
+        recognizeImagesBtn.textContent = 'Očitavanje boja...';
+        customValidationMsg.className = 'custom-status';
+        customValidationMsg.textContent = 'Analiziram fotografije kocke (3 strane po slici)...';
+
+        try {
+          const resp = await fetch('/api/cube/recognize', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ images })
+          });
+          const data = await resp.json();
+          if (!resp.ok) {
+            throw new Error(data?.error || 'Greška pri prepoznavanju slika.');
+          }
+          if (data?.faces) {
+            for (const [f, grid] of Object.entries(data.faces)) {
+              if (draftFacelets[f] && Array.isArray(grid) && grid.length === 9) {
+                draftFacelets[f] = grid;
+              }
+            }
+          }
+          renderCustomCubeNet();
+          renderCustomPaletteAndStatus();
+          if (data?.notes && lastCustomCheck?.ok) {
+            customValidationMsg.textContent += ' Napomena: ' + data.notes;
+          }
+        } catch (err) {
+          customValidationMsg.className = 'custom-status err';
+          customValidationMsg.textContent = err instanceof Error ? err.message : 'Greška pri očitavanju.';
+        } finally {
+          recognizeImagesBtn.textContent = 'Očitaj boje sa slika';
+          syncPhotoButtons();
+        }
+      });
+
+      applyCustomStateBtn.addEventListener('click', () => {
+        const res = validateCustomFacelets(draftFacelets);
+        if (!res.ok) {
+          renderCustomPaletteAndStatus();
+          return;
+        }
+        applyCustomWorldStateTo3D(res.worldCubies);
+        setCustomModalOpen(false);
+      });
+
       speedSlider.addEventListener('input', (e) => {
         animDurationMs = Number(e.target.value);
         speedValueEl.textContent = animDurationMs + 'ms';
@@ -2957,7 +4032,11 @@
       });
 
       window.addEventListener('keydown', (e) => {
-        if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) return;
+        if (customModalOpen) {
+          if (e.key === 'Escape') setCustomModalOpen(false);
+          return;
+        }
+        if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT')) return;
         const key = e.key.toUpperCase();
         if (key === 'H') {
           dockToggle.click();
@@ -3133,8 +4212,16 @@
           learnActivePhase: learnPlan[0]?.name || null,
           learnStepIdx,
           learnMoveIdx,
-          highlightVisible: highlightCage.visible
-        })
+          highlightVisible: highlightCage.visible,
+          customModalOpen
+        }),
+        readFacelets: () => readFaceletsFromState(readLogicalStateFrom3D()),
+        applyFacelets: (facelets) => {
+          const res = validateCustomFacelets(facelets);
+          if (!res.ok) return res;
+          applyCustomWorldStateTo3D(res.worldCubies);
+          return { ok: true };
+        }
       };
 
       if (!isSoftwareGl) {

@@ -27,7 +27,7 @@ const context = vm.createContext({
 
 vm.runInContext(
   solverSource +
-    '\nthis.__exports = { MOVE_DEFS, createSolvedState, cloneState, applyMoveToState, isStateSolved, generateScramble, solveCubeLBL, invertMove, compressMoves };',
+    '\nthis.__exports = { MOVE_DEFS, createSolvedState, cloneState, applyMoveToState, isStateSolved, generateScramble, solveCubeLBL, invertMove, compressMoves, readFaceletsFromState, buildStateFromFacelets, rotateFaceletGridCW, validateCustomFacelets };',
   context
 );
 
@@ -38,7 +38,10 @@ const {
   isStateSolved,
   generateScramble,
   solveCubeLBL,
-  invertMove
+  invertMove,
+  readFaceletsFromState,
+  rotateFaceletGridCW,
+  validateCustomFacelets
 } = context.__exports;
 
 test('initial state has 27 cubies and is solved', () => {
@@ -126,4 +129,46 @@ test('7-step LBL solver solves cubes after arbitrary manual + middle-slice (M, E
     }
     assert.equal(isStateSolved(verifyCube), true, `Middle-slice trial ${trial} failed to solve`);
   }
+});
+
+test('custom facelets round-trip and parity/solvability validator', () => {
+  // 1. Valid scrambled cube round-trips through readFaceletsFromState + validateCustomFacelets
+  const cube = createSolvedState();
+  for (const m of ['R', 'U', "F'", 'D2', 'L']) applyMoveToState(cube, m);
+  const f = readFaceletsFromState(cube);
+  const res = validateCustomFacelets(f);
+  assert.equal(res.ok, true);
+  assert.equal(readFaceletsFromState(res.worldCubies).U.join(''), f.U.join(''));
+
+  // 2. Wrong sticker count fails
+  const badCount = readFaceletsFromState(createSolvedState());
+  badCount.U[0] = 'G';
+  assert.equal(validateCustomFacelets(badCount).ok, false);
+
+  // 3. Single flipped edge fails edge parity
+  const flippedEdge = readFaceletsFromState(createSolvedState());
+  flippedEdge.U[7] = 'G';
+  flippedEdge.F[1] = 'W';
+  assert.equal(validateCustomFacelets(flippedEdge).ok, false);
+
+  // 4. Single twisted corner fails corner twist parity
+  const twistedCorner = readFaceletsFromState(createSolvedState());
+  twistedCorner.U[8] = 'G';
+  twistedCorner.F[2] = 'R';
+  twistedCorner.R[0] = 'W';
+  assert.equal(validateCustomFacelets(twistedCorner).ok, false);
+
+  // 5. Swapped pair of edges fails permutation parity
+  const swappedEdges = readFaceletsFromState(createSolvedState());
+  swappedEdges.U[7] = 'W';
+  swappedEdges.F[1] = 'R'; // UF becomes W-R
+  swappedEdges.U[5] = 'W';
+  swappedEdges.R[1] = 'G'; // UR becomes W-G
+  assert.equal(validateCustomFacelets(swappedEdges).ok, false);
+
+  // 6. rotateFaceletGridCW returns to original after 4 rotations
+  const sample = ['W', 'G', 'R', 'B', 'W', 'O', 'Y', 'G', 'B'];
+  let rot = sample;
+  for (let i = 0; i < 4; i++) rot = rotateFaceletGridCW(rot);
+  assert.equal(rot.join(''), sample.join(''));
 });
