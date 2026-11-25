@@ -83,6 +83,18 @@ test('7-step LBL solver solves 150 randomized 22-move scrambles', () => {
     let totalMoves = 0;
     for (const ph of phases) {
       assert.ok(typeof ph.name === 'string' && ph.name.length > 0);
+      assert.ok(typeof ph.titleSr === 'string' && ph.titleSr.length > 0);
+      assert.ok(typeof ph.goalSr === 'string' && ph.goalSr.length > 0);
+      assert.ok(Array.isArray(ph.steps) && ph.steps.length > 0, `${ph.name} should include steps`);
+      const stepMoves = [];
+      for (const st of ph.steps) {
+        assert.ok(typeof st.label === 'string' && st.label.length > 0);
+        assert.ok(typeof st.description === 'string' && st.description.length > 0);
+        assert.ok(Array.isArray(st.moves) && st.moves.length > 0);
+        assert.ok(Array.isArray(st.targetColors) && st.targetColors.length >= 2);
+        stepMoves.push(...st.moves);
+      }
+      assert.equal(stepMoves.join(' '), ph.moves.join(' '), `Step moves must match phase moves in ${ph.name}`);
       for (const m of ph.moves) {
         assert.ok(['U', 'D', 'L', 'R', 'F', 'B'].includes(m[0]), `Solver should emit outer face moves, got ${m}`);
         applyMoveToState(verifyCube, m);
